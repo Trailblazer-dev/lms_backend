@@ -4,7 +4,7 @@ from .models import User, Role, UserRole, Profile
 from .models_application import StudentApplication
 @admin.register(StudentApplication)
 class StudentApplicationAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'email', 'nationality', 'qualification', 'knqf_level', 'submitted_at', 'status')
+    list_display = ('full_name', 'email', 'nationality', 'highest_academic_qualification', 'submitted_at', 'status')
     readonly_fields = ('submitted_at',)
     search_fields = ('full_name', 'email', 'nationality')
 

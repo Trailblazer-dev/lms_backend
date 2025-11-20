@@ -5,7 +5,9 @@ class StudentApplicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = StudentApplication
         fields = [
-            'id', 'full_name', 'email', 'nationality', 'qualification', 'knqf_level',
+            'id', 'full_name', 'email', 'phone_number', 'date_of_birth', 'nationality', 'country_of_residence',
+            'highest_academic_qualification', 'name_of_institution', 'year_of_completion',
+            'current_occupation', 'years_of_experience', 'how_you_heard_about_us', 'anything_else',
             'academic_certificate', 'passport_photo', 'national_id', 'passport', 'submitted_at', 'status'
         ]
         read_only_fields = ['id', 'submitted_at', 'status']
