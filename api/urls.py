@@ -1,7 +1,7 @@
 from users.views import RegistrationAPIView, LoginAPIView
 from rest_framework import routers
 from django.urls import path, include
-from users.views import UserViewSet
+from users.views import UserViewSet, ProfileFileUploadView
 from courses.views import (
     CourseViewSet,
     CourseCategoryViewSet,
@@ -61,6 +61,7 @@ urlpatterns = [
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('', include(router.urls)),
+    path('users/me/upload/<str:field_name>/', ProfileFileUploadView.as_view(), name='profile-file-upload'),
     path('student-applications/', StudentApplicationView.as_view(), name='student-application'),
     path('courses/<int:course_id>/quizzes/', QuizListView.as_view(), name='course-quizzes'),
     path('courses/<int:course_id>/assignments/', AssignmentListView.as_view(), name='course-assignments'),
